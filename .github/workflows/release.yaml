@@ -35,9 +35,6 @@ jobs:
       - name: Activate virtual environment
         run: source nsus/bin/activate
 
-      - name: Install build-system
-        run: pip install -r requests.txt
-
       - name: Install deps
         run: |
           uv install
