@@ -1,4 +1,5 @@
 """Tests for nsus package."""
+
 import pytest
 
 
