@@ -15,7 +15,7 @@ A python library for NSIS windows installer analysis
 
 ## Features
 
-TBD
+TB
 
 ## Credits
 
