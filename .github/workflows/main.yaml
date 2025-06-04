@@ -57,7 +57,9 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Install dependencies
-        run: uv pip install -e .[dev]
+        run: |
+          uv pip install -e .[dev]
+          echo "$HOME/.local/bin" >> $GITHUB_PATH
 
       - name: Run tests
         run: |
@@ -68,4 +70,4 @@ jobs:
         run: |
           export PATH="$(uv venv bin):$PATH"
           pre-commit install
-          # add your command for running the linter here
+          pre-commit run --all-files
