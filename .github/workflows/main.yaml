@@ -44,11 +44,15 @@ jobs:
         with:
           python-version: "pypy3.9"
 
-      - name: Create virtual environment
-        run: source nsus/bin/activate
+      - name: Setup environment and install dependencies
+        run: |
+          python -m venv nsus
+          source nsus/bin/activate
+          pip install uv
 
       - name: Install build-system
         run: pip install -r requirements.txt
+
       - name: Install dependencies
         run: |
           uv pip install -e .
