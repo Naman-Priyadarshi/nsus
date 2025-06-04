@@ -63,6 +63,9 @@ jobs:
         run: |
           # add your command for running tests here
 
+      - name: Add local binaries to PATH
+        run: echo "$HOME/.local/bin" >> $GITHUB_PATH
+
       - name: Run style checks
         if: success() || failure()
         run: |
